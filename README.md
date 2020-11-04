@@ -13,7 +13,7 @@
 
 ### Association
 - has_many : items
-- has_one  : order
+- has_many  : order
 
 
 ## itemsテーブル
@@ -22,11 +22,11 @@
 | ---------  | ---------- | ------------------------------ |
 | name       | string     | null: false                    |          
 | explanation| text       | null: false                    |
-| category   | string     | null: false                    |    
-| status     | string     | null: false                    |   
-| burden     | string     | null: false                    |
-| area       | string     | null: false                    |
-| days       | string     | null: false                    |
+| category   | integer    | null: false                    |    
+| status     | integer    | null: false                    |   
+| burden     | integer    | null: false                    |
+| area       | integer    | null: false                    |
+| days       | integer    | null: false                    |
 | price      | integer    | null: false                    |
 | user_id    | references | null: false , foreign_key: true|
 
@@ -55,12 +55,12 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| Postal code   | integer    | null: false                    |                            
-| Prefectures   | string     | null: false                    | 
-| Municipality  | string     | null: false                    | 
+| postal code   | string     | null: false                    |                            
+| prefectures   | integer    | null: false                    | 
+| municipality  | string     | null: false                    | 
 | house number  | string     | null: false                    |
-| Building name | string     | null: false                    |
-| phone number  | integer    | null: false                    |  
+| building name | string     | null: false                    |
+| phone number  | string     | null: false                    |  
 | order         | references | null: false , foreign_key: true| 
 
 ## Association
