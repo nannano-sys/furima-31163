@@ -63,3 +63,4 @@ group :production do
 end
 
 gem 'devise'
+gem 'gimei' #漢字やカタカナを自動で生成するgem
