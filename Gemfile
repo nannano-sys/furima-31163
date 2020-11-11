@@ -64,3 +64,8 @@ end
 
 gem 'devise'
 gem 'gimei' #漢字やカタカナを自動で生成するgem
+
+gem 'mini_magick'
+gem 'image_processing', '~>1.2'
+
+gem 'active_hash'
