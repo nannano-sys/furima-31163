@@ -12,34 +12,7 @@ RSpec.describe Item, type: :model do
       it "空欄が全て埋まっていれば出品できる" do
         expect(@item).to be_valid
       end
-      it "商品画像が存在すれば出品できる" do
-        @item.image = fixture_file_upload('public/image/test_image.png')
-        expect(@item).to be_valid
-      end
-      it "商品の説明が存在すれば出品できる" do
-        @item.explanation
-        expect(@item).to be_valid
-      end
-      it "カテゴリの情報が存在すれば出品できる" do
-        @item.category_id
-        expect(@item).to be_valid
-      end
-      it "商品の状態に情報が存在すれば出品できる" do
-        @item.status_id
-        expect(@item).to be_valid
-      end
-      it "配送料の負担の情報が存在すれば出品できる" do
-        @item.burden_id
-        expect(@item).to be_valid
-      end
-      it "配送先の地域の情報が存在すれば出品できる" do
-        @item.area_id
-        expect(@item).to be_valid
-      end
-      it "発送までの日数の情報が存在すれば出品できる" do
-        @item.days_id
-        expect(@item).to be_valid
-      end
+      
       it "価格の情報が存在すれば出品できる" do
         @item.price
         expect(@item).to be_valid
