@@ -7,7 +7,7 @@ class Item < ApplicationRecord
     validates :status_id, numericality: { other_than: 1, message: 'Select' }  
     validates :burden_id, numericality: { other_than: 1, message: 'Select'} 
     validates :area_id, numericality: { other_than: 1, message: 'Select'}
-    validates :days_id, numericality: { other_than: 1, message: 'Selectk' } 
+    validates :days_id, numericality: { other_than: 1, message: 'Select' } 
     validates :price, numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'Out of setting range'}
     validates :price, numericality: {with: /\A[a-zA-Z0-9]+\z/, message: "Half-width number"}
     validates :user
