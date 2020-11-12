@@ -1,14 +1,13 @@
 class Item < ApplicationRecord
   with_options presence: true do
     validates :name
-
+    validates :explanation
     validates :category_id, numericality: { other_than: 1, message: 'Select' } # ジャンルの選択が---のときは選択できないようにする
     validates :status_id, numericality: { other_than: 1, message: 'Select' }
     validates :burden_id, numericality: { other_than: 1, message: 'Select' }
     validates :area_id, numericality: { other_than: 1, message: 'Select' }
     validates :day_id, numericality: { other_than: 1, message: 'Select' }
     validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'Out of setting range' }
-
     validates :user
     validates :image
   end
