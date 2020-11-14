@@ -1,10 +1,10 @@
 class ItemOrder
   include ActiveModel::Model
-  attr_accessor :postal_cord, :prefectures_id, :municipality, :house_number, :building_name, :phone_number
+  attr_accessor :postal_cord, :prefecture_id, :municipality, :house_number, :building_name, :phone_number
   #バリデーションを記載する
     with_options presence :true do
       validates :postal_cord, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Please Include hyphen(-)"} #string型のため、formatオプションを使用
-      validates :prefectures_id, numericality: { other_than: 1, message: 'Select' }
+      validates :prefecture_id, numericality: { other_than: 1, message: 'Select' }
       validates :municipality, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'First name Full-width characters' }
       validates :house_number
       validates :phone_number, format: { with: /\A[a-zA-Z0-9]+\z/, message: 'Enter in half-width numbers' }
@@ -21,6 +21,6 @@ class ItemOrder
     #order_idに保存するため、orderの情報を取得し、orderという変数に格納した
     order = Order.create(user_id: user.id, item_id: item.id)
     #住所情報を保存する
-    Address.create(postal_cord: postal_cord, prefectures_id: prefectures_id, municipality: municipality, house_number: house_number, building_name: building_name, phone_number: phone_number, order_id: order.id)
+    Address.create(postal_cord: postal_cord, prefecture_id: prefectures_id, municipality: municipality, house_number: house_number, building_name: building_name, phone_number: phone_number, order_id: order.id)
   end
 end
