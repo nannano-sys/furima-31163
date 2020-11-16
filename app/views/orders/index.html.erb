@@ -32,10 +32,10 @@
     <%# /支払額の表示 %>
     
     <%# /エラー内容をレンダリングする %>
-    <%# <%= render 'shared/error_messages', model:  %> %>
     <%# /エラー内容をレンダリングする %>
 
-    <%= form_with model: @item_order, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <%= form_with model: @item_order,  id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object  %> 
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
@@ -86,7 +86,7 @@
           <label class="form-text">郵便番号</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :postal_code, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
+        <%= f.text_field :postal_cord, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
