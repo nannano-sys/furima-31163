@@ -10,6 +10,12 @@ RSpec.describe ItemOrder, type: :model do
       it "全ての空欄が正しく埋まっていれば購入できる" do
         expect(@item_order).to be_valid
       end
+    
+
+      it "建物名が空欄でも購入できる" do
+        @item_order.building_name = ""
+        expect(@item_order).to be_valid
+      end
     end
 
     context "商品の購入がうまくいかない場合" do

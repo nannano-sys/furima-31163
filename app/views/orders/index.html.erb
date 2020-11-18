@@ -30,10 +30,7 @@
       </p>
     </div>
     <%# /支払額の表示 %>
-    
-    <%# /エラー内容をレンダリングする %>
-    <%# /エラー内容をレンダリングする %>
-
+  
     <%= form_with model: @item_order,  id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object  %> 
     <%# カード情報の入力 %>
